@@ -33,4 +33,14 @@
     Please, use the following form to log-in:
     If you don't have an account <a href="{% url "register" %}">Register here</a>
   </p>
+
+  <div class="social">
+    <ul>
+      <li class="facebook">
+        <a href="{% url "social:begin" facebook %}">
+          Sign with Facebook
+        </a>
+      </li>
+    </ul>
+  </div>
 {% endblock %}

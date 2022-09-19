@@ -13,9 +13,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 
+# Facbook auth
+SOCIAL_AUTH_FACEBOOK_KEY = '801471420992497'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c65a7fe7b4965698a4ce45badad21542'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'account.authentication.EmailAuthBackend'
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
 
 PASSWORD_HASHERS = [
@@ -45,7 +51,7 @@ SECRET_KEY = 'django-insecure-(q2mlhe+2aa#th&*i_y)77n8ut23)%9)_x6hg0pl3(bism+s9k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -59,7 +65,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # App declaration
-    'account.apps.AccountConfig'
+    'account.apps.AccountConfig',
+
+    # 3rd party
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

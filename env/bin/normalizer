@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/caohuannguyen/Desktop/Huan/Huan_techs/1. Playground/1. Python/1. Django/Django 4 By Example Build powerful and reliable Python web applications from scratch, 4th Edition (Antonio Mele) (z-lib.org)/chapter4 - Build Social network/env/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from charset_normalizer.cli.normalizer import cli_detect
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(cli_detect())
